@@ -37,22 +37,26 @@
     #teamlist{
         width: 100%;
         height: 70%;
-        background-color: green;
+        background-color: var(--blue-green);
         display: flex;
         align-content: center;
-        justify-content: center;   
+        justify-content: center;
+  
     }
-
     #contentBox{
-        width: 70%;
+        width: 100%;
         height: 90%;
+        position: relative; 
     }
-
+    #textBox{
+        position: absolute;
+        z-index: 1;
+        margin-left: 15%;
+    }
     #title{
         margin-top: 45px;
         
     }
-
     #title > p{
         font-size: 1.8rem;
     }
@@ -60,28 +64,27 @@
     #korTitle{
         font-size: 2.4rem;
     }
-
     #text1{
         font-size: 6.4rem;
         margin-top: 13%;
     }
-
     ul, li{list-style: none;}
-
     [name = "slide"] {display: none;}
     .slider{
-        max-width: 153.6rem;
-        max-height: 52rem;
+        width: 100vm;
+        height: 100vm;
         margin: 0 auto;
         
     }
     .slider img{
-        max-width: 100%;
+        width: 100%;
+        height: 100%;
     }
     .slider .slidelist{
         white-space: nowrap;
         font-size: 0;
         overflow: hidden;
+
     }
     .slider .slideitem{
         position: relative;
@@ -90,7 +93,6 @@
         width: 100%;
         transition:all .35s;
     }
-
     .slider .slideitem label{
         position: absolute;
         z-index: 1;
@@ -111,25 +113,20 @@
         background-size: 50%;
         background-repeat: no-repeat; 
     }
-
     #game:checked ~ .slidelist .slideitem {transform: translateX(0); animation:game 10s infinite;}
     #web-app:checked ~ .slidelist .slideitem {transform: translateX(-100%); animation:web-app 10s infinite;}
-
     @keyframes game{
         0% {left: 0%;}
         48% {left: 0%;}
         50% {left: -100%;}
         98% {left: -100%;}
         100%{left: 0%;}
-
     }
-
     @media only screen and (max-width: 570px) {
         #text1{
             font-size: 4rem;
             margin-top: 50%;
         }
     }
-
     
 </style>
