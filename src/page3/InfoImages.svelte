@@ -22,6 +22,7 @@
         width: 600%;
         height: 338px;
         transition: all .4s ease-in-out;
+        background-size:cover;
     }
 
     @media only screen and (max-width: 1536px){
