@@ -1,4 +1,4 @@
-<div id="teamlist">
+<div id="teamlist" class="grid">
     <div id="contentBox">
         <div id="textBox">
             <div id="title"><p class="sc5 cream">Sunrinthon Team Lists</p></div>
@@ -37,7 +37,7 @@
     #teamlist{
         width: 100%;
         height: 70%;
-        background-color: var(--blue-green);
+        background-color: var(--cream);
         display: flex;
         align-content: center;
         justify-content: center;
