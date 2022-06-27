@@ -116,12 +116,15 @@ html {
 
 @media only screen and (max-width: 1200px) {
 	.grid {
+		--floor: calc(var(--a)/var(--b) - .5);
 		background-image: linear-gradient(to top, var(--rgba-grey) 1px, transparent 1px),
 			linear-gradient(to left, var(--rgba-grey) 1px , transparent 1px);
 		background-size: 
-			10vw 10vh,
-			10vw 10vh;
+			10vh 10vh,
+			10vh 10vh;
+		background-position: center;
 	}
+
 }
 
 @media only screen and (max-width: 500px) {
