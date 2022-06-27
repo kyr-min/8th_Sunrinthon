@@ -80,4 +80,14 @@
         height: 100%;
         
     }
+
+    @media only screen and (max-width: 480px) {
+        #contentBox {
+            width: 85%;
+        }
+        #title > p {
+            font-size: 1.4em;
+            color: var(--grey)
+        }
+    }
 </style>

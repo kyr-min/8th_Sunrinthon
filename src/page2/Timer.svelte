@@ -35,6 +35,7 @@
     #bubbleBox {
         background-color: var(--blue-green);
         height: fit-content;
+        border-radius: 10px;
         width: 100%;
     }
 
@@ -42,7 +43,7 @@
         position: relative;
         width: 100%;
         height: fit-content;
-        border-radius: 10px;
+        
         padding: 20px;
         display: flex;
         justify-content: center;
@@ -53,7 +54,7 @@
         width: 0px;
         height: 0px;
         right: 49.15%;
-        top: 100%;
+        top: 99%;
         position: absolute;
         border-top: 30px solid var(--blue-green);
         border-left: 30px solid transparent;
@@ -84,7 +85,18 @@
             right: calc(50% - 30px)
         }
         #speechBubble > p {
-        font-size: 3rem;
+            font-size: 3rem;
+        }
     }
+    @media only screen and (max-width: 480px) {
+        #textBox :nth-child(1) {
+            font-size: 2rem;
+        }
+        #textBox :nth-child(2) {
+            color: transparent;
+        }
+        #timeText {
+            letter-spacing: 5px;
+        }
     }
 </style>

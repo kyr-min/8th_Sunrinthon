@@ -9,6 +9,7 @@
     "gh-deploy": "git subtree push --prefix public origin gh-pages"
   },
   "devDependencies": {
+    "@playwright/test": "^1.22.2",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "rollup": "^2.3.4",

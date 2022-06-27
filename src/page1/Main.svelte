@@ -114,14 +114,14 @@
 
     @media only screen and (max-width: 480px) {
         #textBox :nth-child(1) {
-            font-size: 1.4rem;
+            font-size: 2rem;
         }
         #textBox :nth-child(2) {
             font-size: 4rem;
         }
         #content1Box {
-            margin-top: 15vh;
-            height: 80%;
+            margin-top: 8vh;
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
