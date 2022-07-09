@@ -1,132 +1,132 @@
 <div id="teamlist" class="grid">
     <div id="contentBox">
-        <div id="textBox">
-            <div id="title"><p class="sc5 cream">Sunrinthon Team Lists</p></div>
-            <div id ="korTitle"><p class="sc7 cream">선린톤 본선 참가팀 목록</p></div>
-        </div>
-        <div id="borderbox">
-            <div class="slider">
-                <input type="radio" name="slide" id="game" checked>
-                <input type="radio" name="slide" id="web-app">
-                    <ul class="slidelist">
-                        <li class="slideitem"> 
-                            <div>
-                                <label for="web-app" class="left"></label>
-                                <label for="web-app" class="right"></label>
-                                <a><img src="/game.png"></a>
-                            </div>
-                        </li>
-                        <li class="slideitem"> 
-                            <div>
-                                <label for="game" class="left"></label>
-                                <label for="game" class="right"></label>
-                                <a><img src="/web-app.png"></a>
-                            </div>
-                        </li>
-                    </ul>
+        <div id="teamConatainer">
+            <div id="textBox">
+                <div id="title">
+                    <p class="sc5 cream">Sunrinthon Team Lists</p>
+                </div>
+                <div id="korTitle">
+                    <p class="sc7 cream">선린톤 본선 참가팀 목록</p>
+                    <p class="sc7 cream" id="pForMobile">참가팀 목록</p>
+                </div>
             </div>
-        </div>     
+            <div id="teamList">
+                <div class="listImageContainer">
+                    <img src="/game.png" alt="게임 참가팀" />
+                    <img src="/web-app.png" alt="웹-앱 참가팀" />
+                </div>
+            </div>
+            <div id="teamList_mobile">
+                <div class="listImageContainer">
+                    <img src="/mobile_game.png" alt="게임 참가팀" />
+                    <img src="/mobile_web.png" alt="웹-앱 참가팀" />
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    #teamlist{
-        width: 100%;
-        height: 70%;
-        background-color: var(--cream);
-        display: flex;
-        align-content: center;
-        justify-content: center;
-  
-    }
-    #contentBox{
-        width: 100%;
-        height: 90%;
-        position: relative; 
-    }
-    #textBox{
-        position: absolute;
-        z-index: 1;
-        margin-left: 15%;
-    }
-    #title{
-        margin-top: 45px;
-        
-    }
-    #title > p{
-        font-size: 1.8rem;
-    }
-    
-    #korTitle{
-        font-size: 2.4rem;
-    }
-    #text1{
-        font-size: 6.4rem;
-        margin-top: 13%;
-    }
-    ul, li{list-style: none;}
-    [name = "slide"] {display: none;}
-    .slider{
-        width: 100vm;
-        height: 100vm;
-        margin: 0 auto;
-        
-    }
-    .slider img{
-        width: 100%;
-        height: 100%;
-    }
-    .slider .slidelist{
-        white-space: nowrap;
-        font-size: 0;
-        overflow: hidden;
 
-    }
-    .slider .slideitem{
-        position: relative;
-        display: inline-block;
-        vertical-align: middle;
-        width: 100%;
-        transition:all .35s;
-    }
-    .slider .slideitem label{
-        position: absolute;
-        z-index: 1;
-        transform: translateY(-50%);
-        padding: 20px;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-    label.left{
-        left: 2rem;
-        background-position: center center;
-        background-size: 50%;
-        background-repeat: no-repeat; 
-    }
-    label.right{
-        right: 2rem;
-        background-position: center center;
-        background-size: 50%;
-        background-repeat: no-repeat; 
-    }
-    #game:checked ~ .slidelist .slideitem {transform: translateX(0); animation:game 10s infinite;}
-    #web-app:checked ~ .slidelist .slideitem {transform: translateX(-100%); animation:web-app 10s infinite;}
-    @keyframes game{
-        0% {left: 0%;}
-        48% {left: 0%;}
-        50% {left: -100%;}
-        98% {left: -100%;}
-        100%{left: 0%;}
-    }
-    @media only screen and (max-width: 570px) {
-        #text1{
-            font-size: 4rem;
-            margin-top: 50%;
+<style>
+    @keyframes teamList {
+        0% {
+            transform: translateX(0%);
+        }
+        48% {
+            transform: translateX(0%);
+        }
+        50% {
+            transform: translateX(-100%);
+        }
+        98% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0%);
         }
     }
-    
+    #teamList {
+        display: inline;
+    }
+    .listImageContainer {
+        display: flex;
+        height: fit-content;
+    }
+
+    .listImageContainer img {
+        min-width: 100vw;
+        height: auto;
+    }
+
+    .listImageContainer :nth-child(1) {
+        animation: teamList 10s infinite;
+    }
+    .listImageContainer :nth-child(2) {
+        animation: teamList 10s infinite;
+    }
+
+    #textBox {
+        z-index: 10;
+        position: absolute;
+        margin-left: 15vw;
+    }
+
+    #title {
+        margin-top: 2vw;
+    }
+    #title > p {
+        font-size: 1.4vw;
+    }
+
+    #korTitle {
+        font-size: 1.7vw;
+    }
+
+    #teamList_mobile {
+        display: none;
+    }
+
+    #pForMobile {
+        display:none;
+    }
+
+    @media only screen and (max-width: 570px) {
+        #teamList {
+            display: none;
+        }
+        #teamList_mobile {
+            display: inline;
+        }
+
+        .listImageContainer {
+           
+        }
+        .listImageContainer img {
+            
+            width: 100%;
+        }
+
+        #textBox {
+            z-index: 10;
+            position: absolute;
+            margin-top: 1%;
+            margin-left: 5%;
+        }
+
+        #title {
+            display:none;
+        }
+
+        #korTitle {
+            font-size: 4.7vw;
+            margin-top: 4vw;
+        }
+
+        #korTitle :nth-child(1){
+            display: none;
+        }
+
+        #pForMobile {
+            display:inline;
+        }
+    }
 </style>
