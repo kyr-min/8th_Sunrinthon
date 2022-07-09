@@ -20,7 +20,7 @@
     </div>
     <div id="page1_cont2">
         <img src="/textBubble.png" alt="선린 인터넷" id="textBubble" />
-        <img src="/cursor.png" alt="커서" id="handCursor" />
+        <img src="/cursor.png" alt="커서 " id="handCursor" />
     </div>
 </main>
 
