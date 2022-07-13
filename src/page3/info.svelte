@@ -14,6 +14,12 @@
             checkSame = num;
         }
     };
+
+    $: innerWidth = 0;
+    let height;
+    let lastHeight;
+    $: lastHeight = (innerWidth / 1536) * 500;
+    $: height = (innerWidth / 1536) * 500;
 </script>
 
 <div id="Information">
@@ -101,6 +107,101 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+    
+    <div id="infoForMobile">
+        <div id="infoForMobileContainer">
+            <div class="sectionMobile">
+                <div class="svgMobile">
+                    <object
+                        data="/svgs/whatsHackathon.svg"
+                        type="image/svg+xml"
+                        title="whatsHackathon"
+                        >이 브라우저는 svg를 지원하지않습니다.</object
+                    >
+                </div>
+                <div class="infoImgMobile img1" style="background-size: auto {height}px; height: {height}px;  ">
+
+                </div>
+
+            </div>
+            <div class="sectionMobile">
+                <div class="svgMobile">
+                    <object
+                        data="/svgs/offlineInfo.svg"
+                        type="image/svg+xml"
+                        title="offlineInfo"
+                        >이 브라우저는 svg를 지원하지않습니다.</object
+                    >
+                </div>
+                <div class="infoImgMobile img2" style="background-size: auto {height}px; height: {height}px; background-position: {-innerWidth * 1}px 0px;">
+
+                </div>
+
+            </div>
+            <div class="sectionMobile">
+                <div class="svgMobile">
+                    <object
+                        data="/svgs/finalInfo.svg"
+                        type="image/svg+xml"
+                        title="finalInfo"
+                        >이 브라우저는 svg를 지원하지않습니다.</object
+                    >
+                </div>
+                <div class="infoImgMobile img3" style="background-size: auto {height}px; height: {height}px; background-position: {-innerWidth * 2}px 0px;">
+
+                </div>
+
+            </div>
+            <div class="sectionMobile">
+                <div class="svgMobile">
+                    <object
+                        data="/svgs/qualificationInfo.svg"
+                        type="image/svg+xml"
+                        title="qualificationInfo"
+                        >이 브라우저는 svg를 지원하지않습니다.</object
+                    >
+                </div>
+                <div class="infoImgMobile img4" style="background-size: auto {height}px; height: {height}px; background-position: {-innerWidth * 3}px 0px;">
+
+                </div>
+
+            </div>
+            <div class="sectionMobile">
+                <div class="svgMobile">
+                    <object
+                        data="/svgs/questionSNS.svg"
+                        type="image/svg+xml"
+                        title="offlineInfo"
+                        >이 브라우저는 svg를 지원하지않습니다.</object
+                    >
+                </div>
+                <div class="infoImgMobile img5" style="background-size: auto {height}px; height: {height}px; background-position: {-innerWidth * 4}px 0px;">
+
+                </div>
+
+            </div>
+            <div class="sectionMobile">
+                <div class="svgMobile">
+                    <object
+                        data="/svgs/guideline.svg"
+                        type="image/svg+xml"
+                        title="guidline"
+                        >이 브라우저는 svg를 지원하지않습니다.</object
+                    >
+                </div>
+                <div class="infoImgMobile img6" style="background-size: auto {lastHeight}px; height: {lastHeight}px; background-position: {-innerWidth * 5}px 0px;">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
 
 <style>
@@ -108,7 +209,6 @@
         display: flex;
         flex-direction: column;
         width: 70%;
-        height: 45%;
     }
     #InfoTextBox :nth-child(1) {
         font-size: 1.8rem;
@@ -169,6 +269,10 @@
         margin-right: 20px;
     }
 
+    #infoForMobile {
+        display:none;
+    }
+
     @media only screen and (max-width: 1600px) {
         .sectionP {
             font-size: 2rem;
@@ -217,4 +321,50 @@
             font-size: 1rem;
         }
     }
+
+    @media only screen and (max-width:480px) {
+        #Information {
+            width: 100%;
+            height: 45%;
+        }
+        #sectionsBox {
+            display: none;
+        }
+        #infoForMobile{
+            display: inline;
+        }
+        #infoForMobileContainer {
+            width: 100%;
+        }
+
+        .sectionMobile:first-child {
+            margin-top: 10%;
+            
+        }
+        .svgMobile {
+            position: absolute;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 5%;
+            padding-top: 4%;
+            padding-bottom: 4%;
+            margin-top: -10%;
+            z-index: 2;
+            width:15%;
+            background: #F8F0DE;
+            border-radius: 10px;
+            box-shadow: 0px 3px 12px 2px rgba(0, 0, 0, 0.41);
+        }
+
+        .infoImgMobile {
+            outline: 1px beige solid;
+            background-image: url('/Imageslide.png');
+            width: 100vw;
+        }
+    } 
+
+
 </style>
+
+<svelte:window bind:innerWidth />

@@ -35,7 +35,7 @@
 <style>
     footer {
         width: 100%;
-        height: 40%;
+        height: fit-content;
         background-color: var(--blue-green);
         display: flex;
         justify-content: space-around;

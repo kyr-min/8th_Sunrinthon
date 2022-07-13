@@ -41,7 +41,7 @@
         <div id="title"><p class="sc5">Card News</p></div>
         <div id="kr-title"><p class="sc8">카드 뉴스</p></div>
     </div>
-
+    
     <div class="cardNews">
         <div id="slideContainer" style="left: {final}vw;">
             <div class="slide">
@@ -61,6 +61,7 @@
             </div>
         </div>
     </div>
+    <div class="cardNewsDummy"></div>
 </div>
 
 <svelte:window bind:innerWidth />
@@ -75,6 +76,8 @@
         left: 12vw;
         transition: all 0.4s ease-in-out;
     }
+
+    
 
     #slideContainer :after {
     }
@@ -102,7 +105,7 @@
         align-items: center;
         perspective: 10em;
         transition: transform 0.4s;
-        width: 30vw;
+        width: 30%;
         margin-right: 20px;
     }
 
@@ -118,6 +121,8 @@
         font-size: 2.4rem;
     }
 
+    
+
     @keyframes scroll {
         0% {
             transform: translateX(-50%);
@@ -127,13 +132,24 @@
         }
     }
 
+    @media only screen and (max-height: 650px) {
+        .cardNewsDummy {
+            width: 100%;
+            height: 40vw;
+        }
+    }
+
     @media only screen and (max-width: 480px) {
         #slideContainer {
             position: absolute;
             display: flex;
             animation: none;
             left: 10vw;
-            
+        }
+
+        .cardNewsDummy {
+            width: 100%;
+            height: 100vw;
         }
         .slide {
             width: 90vw;

@@ -3,7 +3,7 @@
 
     $: innerWidth = 0;
     let height;
-    let width
+    let width;
     
     $: (currentImage == 6) ? height = (innerWidth / 1536) * 500 : height = (innerWidth / 1536) * 338;
     $: if(!isOpen) {
@@ -11,9 +11,17 @@
     } else {
         (currentImage == 6) ? height = (innerWidth / 1536) * 500 : height = (innerWidth / 1536) * 338;
     }
+
+    $: if(currentImage == 6) {
+        width = -innerWidth * (currentImage-1) -1;
+    } else if (currentImage == 0){
+        width = 0;
+    } else {
+        width = -innerWidth * (currentImage-1);
+    }
 </script>
 
-<div id="InfoImageSprite" style="background-position : {-innerWidth * ((currentImage) ? (currentImage-1) : 0)}px 0; height: {height}px;">
+<div id="InfoImageSprite" style="background-position : {width}px 0; height: {height}px;">
 </div>
 
 <style>
@@ -28,6 +36,12 @@
     @media only screen and (max-width: 1536px){
         #InfoImageSprite {
             background-size: cover;
+        }
+    }
+
+    @media only screen and (max-width: 480px){
+        #InfoImageSprite {
+            display:none;
         }
     }
 

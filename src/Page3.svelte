@@ -13,6 +13,7 @@
             <Info bind:select={selection} bind:isOpen = {open}   ></Info>
         </div>
         <InfoImages currentImage={selection} isOpen={open}></InfoImages>
+        <div class="page3Dummy"></div>
         <div id="page3Cont2">
             <!-- <div id="cardNewsTextBox">
                 <p>Card News</p>
@@ -26,7 +27,7 @@
     #page3 {
         background-color: var(--cream);
         width: 100%;
-        height: 170%;
+        height: 200%;
         display: flex;
         align-content: center;
         justify-content: center;
@@ -35,6 +36,10 @@
     #contentWrapper {
         width: 100%;
         height: 85%;
+    }
+
+    .page3Dummy {
+        height: 50px;
     }
 
     #page3Cont1 {
@@ -46,13 +51,21 @@
     }
 
     #page3Cont2 {
+        
         height: 73%;
     }
 
     @media only screen and (max-width: 480px){
+        #page3 {
+            height: fit-content;
+        }
         #page3Cont2 {
-            margin-top: 40%;
+            margin-top: 20%;
             height: 50%;
+        }
+
+        #page3Cont1 {
+            height: auto;
         }
     }
 
