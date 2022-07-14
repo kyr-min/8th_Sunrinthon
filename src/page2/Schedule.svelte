@@ -1,12 +1,12 @@
 <script>
-    export let formatedNow, click =0, isOpen= false;
+    export let formatedNow, click =0, isOpen= false, progpercentage;
 
     const MissionTimeLine = [
+        "10 : 00",
         "00 : 00",
-        "00 : 00",
-        "00 : 00",
-        "00 : 00",
-        "00 : 00",
+        "17 : 00",
+        "20 : 00",
+        "01 : 00",
         "00 : 00"
     ]
 
@@ -72,9 +72,13 @@
         </div>
     </div>
     <div id="barDescription">
-        <div id="progressBar" />
+        <div id="progressBar" style="background-image: linear-gradient(
+            to right,
+            var(--blue-green) {progpercentage}%,
+            var(--grey) 1px
+        );"/>
         <div id="description">
-            <span class="sc5 bluegreen" id="clickIcon">* 아이콘을 클릭하여 정보를 볼 수 있습니다</span>
+            <span class="sc5 bluegreen" id="clickIcon">* 텍스트를 클릭하여 정보를 볼 수 있습니다</span>
             <span class="sc5 bluegreen" id="scrollMobile">* 좌우로 스크롤 해주세요</span>
             <span class="sc7 bluegreen">현재 시각 : {formatedNow}</span>
         </div>
@@ -99,7 +103,7 @@
         height: 9px;
         background-image: linear-gradient(
             to right,
-            var(--blue-green) 20%,
+            var(--blue-green) 0%,
             var(--grey) 1px
         );
         border-radius: 10px;

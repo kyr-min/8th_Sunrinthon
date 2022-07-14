@@ -7,13 +7,22 @@
     const handleUndefined = variable => variable || '00:00:00'
     const qualificationDue = new Date("6/19/22");
     const today = new Date('6/5/22');
+    const end = new Date("7/16/22 12:00:00");
+    const start = new Date("7/15/22 10:00:00");
+    const full = end-start;
     let hour, min, sec;
     let nowH, nowM, nowS;
     let formatedRemaining;
     let formatedNow;
+
+    let percentage;
     const time = setInterval(() => {
+        
         let now = Date.now() - today + 1000;
-        let remaining = qualificationDue - Date.now();
+        let remaining = start - Date.now();
+        console.log(remaining)
+        let fromStart = (now - start <= 0) ? 0 : (now - start);
+        percentage = (parseInt(fromStart / full * 100) >= 100) ? 100 : parseInt(fromStart / full * 100);
 
         hour = Math.floor(remaining/1000  / 60 / 60);
         remaining -= hour* 1000 * 60 * 60
@@ -46,7 +55,7 @@
         <div id="components">
             <Timer formatedRemaining={handleUndefined(formatedRemaining)}></Timer>
             <MarkerDescCont currentMarker={click} isOpen={open}></MarkerDescCont>
-            <Schedule formatedNow = {handleUndefined(formatedNow)} bind:click={click} bind:isOpen={open}></Schedule>
+            <Schedule formatedNow = {handleUndefined(formatedNow)} progpercentage= {percentage} bind:click={click} bind:isOpen={open}></Schedule>
         </div>
     </div>
 </div>
