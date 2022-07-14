@@ -47,7 +47,7 @@
 <div id="sideBarContainer" >
     <div id="sideBar" class={hidden_left_state} style="top: {sideBarYOffset}px;">
         <ul class="sc5">
-            <li on:click={scrollTo("main")}>메인</li>
+            <li on:click={scrollTo("#imageBox")}>메인</li>
             <li on:click={scrollTo("#page2")}>타이머</li>
             <li on:click={scrollTo("#teamlist")}>참가팀</li>
             <li on:click={scrollTo("#Information")}>안내</li>

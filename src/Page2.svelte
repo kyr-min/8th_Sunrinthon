@@ -1,6 +1,7 @@
 <script>
     import Timer from './page2/Timer.svelte';
     import Schedule from './page2/Schedule.svelte';
+    import MarkerDescCont from './page2/MarkerDescCont.svelte'
     //피곤해
 
     const handleUndefined = variable => variable || '00:00:00'
@@ -32,6 +33,9 @@
         formatedNow = `${nowH.toString().padStart(2,'0')}:${nowM.toString().padStart(2,'0')}:${nowS.toString().padStart(2,'0')}`
     }, 1000);
 
+
+    let click;
+    let open;
 </script>
 
 <div id="page2" class="grid">
@@ -41,7 +45,8 @@
         </div>
         <div id="components">
             <Timer formatedRemaining={handleUndefined(formatedRemaining)}></Timer>
-            <!-- <Schedule formatedNow = {handleUndefined(formatedNow)}></Schedule> -->
+            <MarkerDescCont currentMarker={click} isOpen={open}></MarkerDescCont>
+            <Schedule formatedNow = {handleUndefined(formatedNow)} bind:click={click} bind:isOpen={open}></Schedule>
         </div>
     </div>
 </div>
@@ -49,9 +54,9 @@
 <style>
     #page2 {
         /* 스케줄 표 있을 때 */
-        /* height: 100%; */
+        height: 98.7%;
         /* 스케줄 표 없을 때 */
-        height: 40%;
+        /* height: 40%; */
         width: 100%;
         background-color: var(--cream);
         display: flex;
@@ -80,6 +85,18 @@
         height: 100%;
         
     }
+    @media only screen and (max-width: 1500px) {
+        #page2 {
+            height: 80%;
+        }
+    }
+
+    @media only screen and (max-width: 860px) {
+        #page2 {
+            height: 80%;
+        }
+    }
+
 
     @media only screen and (max-width: 480px) {
         #contentBox {

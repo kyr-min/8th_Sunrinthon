@@ -43,6 +43,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        
     }
 
     #content1Box {
@@ -80,6 +81,7 @@
         z-index: 1;
         width: 70%;
         filter: drop-shadow(0.6em 1em 0.5em var(--grey-for-shadow));
+        animation: float 7s infinite;
     }
 
     #handCursor {
@@ -88,6 +90,19 @@
         width: 5%;
         margin-left: 30%;
         margin-top: 15%;
+        animation: float 7s infinite;
+    }
+
+    @keyframes float{
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(3%);
+        }
+        100% {
+            transform: translateY(0);
+        }
     }
 
     @media only screen and (max-width: 750px) {
@@ -125,6 +140,12 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+        }
+    }
+
+    @media only screen and (max-height: 445px) {
+        #page1_cont2 {
+            display: none;
         }
     }
 

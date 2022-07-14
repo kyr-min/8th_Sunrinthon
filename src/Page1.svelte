@@ -51,4 +51,18 @@
         justify-content: center;
         text-align: center;
     }
+
+    @media only screen and (max-height: 600px) {
+        #scrollDown{
+            font-size: 3vh;
+        }
+        
+    }
+
+    @media only screen and (max-height: 460px) {
+        #scrollDown{
+            display: none;
+        }
+        
+    }
 </style>

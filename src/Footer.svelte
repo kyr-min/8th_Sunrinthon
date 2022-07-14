@@ -15,10 +15,10 @@
         <div id="web">
             <p class="sc7 white">웹사이트</p>
             <p class="sc4 white">
-                <span class="sc7 white">개발</span> 김동건 민경록
+                <span class="sc7 white">개발</span> <span>김동건</span> <span>민경록</span>
             </p>
             <p class="sc4 white">
-                <span class="sc7 white">디자인</span> 임동하 이수빈 김유진
+                <span class="sc7 white">디자인</span> <span>임동하</span> <span>이수빈</span> <span>김유진</span>
             </p>
 
             <p id="snsicons">
@@ -27,7 +27,7 @@
         </div>
         <div id="staff">
             <p class="sc7 white">준비위원</p>
-            <span class="sc4 white">정연수 지민경 김동건 김서윤 김세희 이종서 송우진 이제윤 이진우 김유진 김유라 임동하 조승현 강현빈 김정은 문정윤 신동민 이수빈 최소영 민경록 윤서영</span>
+            <span class="sc4 white"><span>정연수</span> <span>지민경</span> <span>김동건</span> <span>김서윤</span> <span>김세희</span> <span>이종서</span> <span>송우진</span> <span>이제윤</span> <span>이진우</span> <span>김유진</span> <span>김유라</span> <span>임동하</span> <span>조승현</span> <span>강현빈</span> <span>김정은</span> <span>문정윤</span> <span>신동민</span> <span>이수빈</span> <span>최소영</span> <span>민경록</span> <span>윤서영</span> </span>
         </div>
     </div>
 </footer>

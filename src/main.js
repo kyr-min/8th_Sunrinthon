@@ -1,7 +1,6 @@
 import Page1 from './Page1.svelte';
 import Page2 from './Page2.svelte';
 import Page3 from './Page3.svelte';
-
 import SideBar from './SideBar.svelte';
 import Team_list from './Team_list.svelte';
 import FooterApp from './Footer.svelte'

@@ -1,4 +1,4 @@
-<div id="teamlist" class="grid">
+<div id="teamlist">
     <div id="contentBox">
         <div id="teamConatainer">
             <div id="textBox">
