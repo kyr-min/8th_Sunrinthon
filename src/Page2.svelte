@@ -113,8 +113,6 @@
         timeTable.forEach(el => {
             
             if((el.TimeEnd - Date.now()) <= 0) {
-                console.log(el);
-                console.log(el.TimeEnd - Date.now());
             } else {
                 if(eventOn === undefined){
                     eventOn = el;
@@ -124,9 +122,9 @@
             }
         });
         let remaining = eventOn.TimeEnd - Date.now();
-        let fromStart = now - start <= 0 ? 0 : Date.now() - start;
+        let fromStart = (Date.now() - start <= 0) ? 0 : (Date.now() - start);
         percentage =
-            parseInt((fromStart / full) * 100) >= 100
+            (parseInt((fromStart / full) * 100) >= 100)
                 ? 100
                 : parseInt((fromStart / full) * 100);
 
@@ -156,6 +154,7 @@
         }
         
     }, 1000);
+
 
     let click;
     let open;

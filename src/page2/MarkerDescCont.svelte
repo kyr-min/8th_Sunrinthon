@@ -3,11 +3,11 @@
 
     let texts = [
         "2022 8th 선린톤의 본 무대가 00월 00일 00시 00분에 시작합니다. \n모든 팀은 체육관으로 모여주세요.",
-        "",
-        "여러가지 이벤트를 통해 간식을 살 수 있는 코인을 드립니다.",
+        "기획 중에 궁금할 때 멘토 선배님들의 멘토링을 받아보세요!",
         "개발하면서 어렵거나 잘 하고 있는지 궁금할 때 멘토 선배님들의 멘토링을 받아보세요!",
-        "스태프와의 대결을 통해 코인을 얻고 간식을 얻으세요!",
-        ""
+        "여러가지 이벤트를 통해 간식을 살 수 있는 코인을 드립니다. 스태프와의 대결을 통해 코인을 얻고 간식을 얻으세요!",
+        "열심히 만든 결과물을 USB에 담아서 제출해주세요!",
+        "시상식을 진행합니다."
     ];
 
     let now = 0;
@@ -39,6 +39,7 @@
 
 <style>
     #markerDescCont {
+        min-width:96.7%;
         height: 44%;
         display: flex;
         flex-direction: column-reverse;
@@ -126,23 +127,24 @@
     }
 
     .on1 {
-        margin-left: calc(calc(100% /6) * 1);
+        margin-left: calc(100% * 19/100);
     }
 
     .on2 {
-        margin-left: calc(calc(100% /6) * 2);
+        margin-left: calc(100% * 38/100);
     }
 
     .on3 {
-        margin-left: calc(calc(100% /6) * 3);
+        margin-left: calc(100% * 50/100);
     }
 
     .on4 {
-        margin-left: calc(calc(100% /6) * 4);
+        margin-left: calc(100% * 73/100 - 3%);
     }
 
     .on5 {
-        margin-left: calc(calc(100% /6) * 5);
+        position:absolute;
+        margin-left: calc(100% * 96/100);
     }
 
     .onNo {
@@ -165,7 +167,7 @@
         border-radius: 10px;
     }
     .on1:before {
-        content: "미션 1";
+        content: "기획 멘토링";
         font-family: "SCDream7";
         color: #766143;
         font-size: 1vw;
@@ -180,7 +182,7 @@
         border-radius: 10px;
     }
     .on2:before {
-        content: "레크레이션";
+        content: "개발 멘토링";
         font-family: "SCDream7";
         color: #766143;
         font-size: 1vw;
@@ -195,7 +197,7 @@
         border-radius: 10px;
     }
     .on3:before {
-        content: "멘토링";
+        content: "이벤트";
         font-family: "SCDream7";
         color: #766143;
         font-size: 1vw;
@@ -210,7 +212,7 @@
         border-radius: 10px;
     }
     .on4:before {
-        content: "스텝 대전";
+        content: "제출";
         font-family: "SCDream7";
         color: #766143;
         font-size: 1vw;
@@ -225,7 +227,7 @@
         border-radius: 10px;
     }
     .on5:before {
-        content: "미션 2";
+        content: "시상식";
         font-family: "SCDream7";
         color: #766143;
         font-size: 1vw;

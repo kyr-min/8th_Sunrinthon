@@ -3,11 +3,11 @@
 
     const MissionTimeLine = [
         "10 : 00",
-        "00 : 00",
-        "17 : 00",
+        "15 : 00",
         "20 : 00",
-        "01 : 00",
-        "00 : 00"
+        "1 : 00",
+        "7 : 00",
+        "11 : 00"
     ]
 
     let checkSame;
@@ -30,47 +30,53 @@
 
 <div id="progWrapper">
     <div id="progressBarDescription">
-        <div class="MarkerBox" on:click={changeInfo(0)}>
+        <div class="MarkerBox first" on:click={changeInfo(0)}>
             <div class="ScheduleTextBox firstText">
                 <p class="sc8">본선 시작</p>
                 <p class="sc5">{MissionTimeLine[0]}</p>
+                <div class="markerDiv"><object class="markerSvg"type="image/svg+xml" data="/svgs/markerIcon.svg" title="marker">이 브라우저는 svg를 지원하지않습니다.</object></div>
             </div>
-            <object class="markerSvg" type="image/svg+xml" data="/svgs/markerIcon.svg" title="marker">이 브라우저는 svg를 지원하지않습니다.</object>
+            
         </div>
-        <div class="MarkerBox">
+        <div class="MarkerBox second" on:click={changeInfo(1)}>
             <div class="ScheduleTextBox">
-                <p class="sc8">미션 1</p>
+                <p class="sc8">기획 멘토링</p>
                 <p class="sc5">{MissionTimeLine[1]}</p>
+                <div class="markerDiv"><object class="markerSvg"type="image/svg+xml" data="/svgs/markerIcon.svg" title="marker">이 브라우저는 svg를 지원하지않습니다.</object></div>
             </div>
-            <object class="markerSvg"type="image/svg+xml" data="/svgs/markerIcon.svg" title="marker">이 브라우저는 svg를 지원하지않습니다.</object>
+            
         </div>
-        <div class="MarkerBox" on:click={changeInfo(2)}>
+        <div class="MarkerBox third" on:click={changeInfo(2)}>
             <div class="ScheduleTextBox rec" >
-                <p class="sc8">레크레이션</p>
+                <p class="sc8">개발 멘토링</p>
                 <p class="sc5">{MissionTimeLine[2]}</p>
+                <div class="markerDiv"><object class="markerSvg"type="image/svg+xml" data="/svgs/markerIcon.svg" title="marker">이 브라우저는 svg를 지원하지않습니다.</object></div>
             </div>
-            <object class="markerSvg"type="image/svg+xml" data="/svgs/markerIcon.svg" title="marker">이 브라우저는 svg를 지원하지않습니다.</object>
+            
         </div>
-        <div class="MarkerBox" on:click={changeInfo(3)}>
+        <div class="MarkerBox fourth" on:click={changeInfo(3)}>
             <div class="ScheduleTextBox mentor" >
-                <p class="sc8">멘토링</p>
+                <p class="sc8">이벤트</p>
                 <p class="sc5">{MissionTimeLine[3]}</p>
+                <div class="markerDiv"><object class="markerSvg"type="image/svg+xml" data="/svgs/markerIcon.svg" title="marker">이 브라우저는 svg를 지원하지않습니다.</object></div>
             </div>
-            <object class="markerSvg"type="image/svg+xml" data="/svgs/markerIcon.svg" title="marker">이 브라우저는 svg를 지원하지않습니다.</object>
+            
         </div>
-        <div class="MarkerBox" on:click={changeInfo(4)}>
+        <div class="MarkerBox fifth" on:click={changeInfo(4)}>
             <div class="ScheduleTextBox" >
-                <p class="sc8">스텝 대전</p>
+                <p class="sc8">제출</p>
                 <p class="sc5">{MissionTimeLine[4]}</p>
+                <div class="markerDiv"><object class="markerSvg"type="image/svg+xml" data="/svgs/markerIcon.svg" title="marker">이 브라우저는 svg를 지원하지않습니다.</object></div>
             </div>
-            <object class="markerSvg"type="image/svg+xml" data="/svgs/markerIcon.svg" title="marker">이 브라우저는 svg를 지원하지않습니다.</object>
+            
         </div>
-        <div class="MarkerBox">
+        <div class="MarkerBox sixth">
             <div class="ScheduleTextBox">
-                <p class="sc8">미션 2</p>
+                <p class="sc8">시상식</p>
                 <p class="sc5">{MissionTimeLine[5]}</p>
+                <div class="markerDiv"><object class="markerSvg"type="image/svg+xml" data="/svgs/markerIcon.svg" title="marker">이 브라우저는 svg를 지원하지않습니다.</object></div>
             </div> 
-            <object class="markerSvg"type="image/svg+xml" data="/svgs/markerIcon.svg" title="marker">이 브라우저는 svg를 지원하지않습니다.</object>
+            
         </div>
     </div>
     <div id="barDescription">
@@ -111,26 +117,31 @@
         border-radius: 10px;
         
     }
+    .markerDiv {
+        display:flex;
+        justify-content: center;
+        
+    }
 
     #progressBarDescription {
         display: flex;
-        justify-content: space-evenly;
         min-width: 397px;
     }
     .MarkerBox {
         display: flex;
+        
         flex-direction: column;
-        width: calc(90%/6);
+        width: calc(90% /6);
     }
 
     .ScheduleTextBox {
         width: fit-content;
         text-align: center;
-        font-size: 1.8em;
+        font-size: 1vw;
     }
     .markerSvg {
-        margin-left: 9px;
-        width: 51px;
+        max-width: 51px;
+        width: 5vw;
     }
     #description {
         width:95%;
@@ -142,16 +153,42 @@
     #scrollMobile {
         display: none;
     }
+
+    .first {
+        margin-left: 0%;
+    }
+    .second {
+        
+        margin-left: calc(68% * 19/100 - 20% /6);
+    }
+    .third {
+        
+        margin-left: calc(68% * 19/100 - 20% /6);
+    }
+    .fourth {
+        margin-left: calc(68% * 12/100 - 20% /6);
+    }
+
+    .fifth {
+        margin-left: calc(68% * 23/100 - 20% /6);
+    }
+
+    .sixth {
+        margin-left: calc(68% * 23/100 - 20% /6);
+    }
+
     @media only screen and (max-width: 1100px) {
-        .rec {
-            margin-left: -10%;
+        .ScheduleTextBox {
+            width: fit-content;
+            text-align: center;
+            font-size: 1vw;
         }
     }
 
     @media only screen and (max-width: 860px) {
 
         .firstText {
-            margin-left: 9%;
+            
         }
         .mentor {
             margin-left: 12%;
@@ -162,11 +199,11 @@
         }
 
         .ScheduleTextBox {
-            font-size: 1.5vw;
+            font-size: 1vw;
             margin-left: 19%;
             text-align: center;
-
         }
+
     }
     
     @media only screen and (max-width: 397px) {
