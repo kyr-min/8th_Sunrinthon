@@ -5,15 +5,15 @@
 <div id="timerBox">
     <div id="textBox">
         <p class="sc8">타이머 및 일정표</p>
-        <p class="sc7 bluegreen">본선 시작 까지</p>
+        <p class="sc7 bluegreen">{formatedRemaining.info} 종료 까지</p>
     </div>
     <div id="bubbleBox">
         <div id="speechBubble">
-            <p id="timeText" class="sc7 cream">00:00:00</p>
+            <p id="timeText" class="sc7 cream">{formatedRemaining.formated}</p>
         </div>
     </div>
 </div>
-
+ 
 <style>
     #timerBox {
         width: 100%;

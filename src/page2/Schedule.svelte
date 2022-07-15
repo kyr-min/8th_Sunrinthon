@@ -23,6 +23,8 @@
         }
     };
 
+    $: console.log(progpercentage);
+
 
 </script>
 
