@@ -137,6 +137,11 @@
         formatedNow = `${nowH.toString().padStart(2, "0")}:${nowM
             .toString()
             .padStart(2, "0")}:${nowS.toString().padStart(2, "0")}`;
+
+        if(hour < 0 || min < 0 || sec < 0) {
+            formatedRemaining = "끝!"
+        }
+
         allInfo = {
             formated: formatedRemaining,
             info: eventOn.title
