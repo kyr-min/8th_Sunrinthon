@@ -9,7 +9,7 @@
     </div>
     <div id="bubbleBox">
         <div id="speechBubble">
-            <p id="timeText" class="sc7 cream">{formatedRemaining}</p>
+            <p id="timeText" class="sc7 cream">00:00:00</p>
         </div>
     </div>
 </div>
