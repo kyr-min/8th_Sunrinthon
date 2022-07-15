@@ -109,18 +109,7 @@
     let percentage;
     const time = setInterval(() => {
         let now = Date.now() - today + 1000;
-        let eventOn;
-        timeTable.forEach(el => {
-            
-            if((el.TimeEnd - Date.now()) <= 0) {
-            } else {
-                if(eventOn === undefined){
-                    eventOn = el;
-                }
-                
-                
-            }
-        });
+        let eventOn = timeTable[timeTable.length - 4];
         let remaining = eventOn.TimeEnd - Date.now();
         let fromStart = (Date.now() - start <= 0) ? 0 : (Date.now() - start);
         percentage =
